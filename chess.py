@@ -81,6 +81,8 @@ class Chess():
                 self.sounds.play_check()
             elif result.opponent_stale_mate:
                 self.stale_mate = True
+            elif result.promote_available:
+                self.board.promote_pawn(result.promote_position, Piece.WHITE_QUEEN if self.whites_turn else Piece.BLACK_QUEEN)
             else:
                 self.sounds.play_move()
                 self.check = False

@@ -391,7 +391,7 @@ class Board:
         return True
 
     def promote_pawn(self, pos, new_piece_id):
-        if pos[1] != 0 and pos[1] != 7:
+        if pos[0] != 0 and pos[0] != 7:
             raise Exception("Invalid rank for promotion.")
 
         piece = self.board_state[pos[0]][pos[1]]
